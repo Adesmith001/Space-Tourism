@@ -1,0 +1,225 @@
+@import url("./global.css");
+
+nav{
+    width: 100%;
+    height: 96px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 40px;
+}
+
+.navbar-left{
+    width: 42.5%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    > #site-logo{
+        margin-left: 55px;
+        width: 48px;
+        height: 48px;
+    }
+
+    > div{
+        height: 2px;
+        width: 80%;
+        border-bottom: var(--custom-nav-grey) 1px solid;
+        position: absolute;
+        z-index: 99;
+        right: -30px;
+        opacity: 25.5%;
+    }
+}
+
+.navbar-right{
+    width: 57.5%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--custom-transparent-white);
+    backdrop-filter: blur(35px);
+
+    >a{
+        height: 97%;
+        font-family: var(--font-theme-barlow-condensed);
+        color: var(--theme-white);
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 2.7px;
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        text-decoration: none;
+        position: relative;
+        padding: 0px;
+        border-style: none;
+
+        >span{
+            font-weight: 700;
+            margin-right: 12px;
+        }
+    }
+
+    a:nth-of-type(1){
+        margin-left: 100px;
+    }
+
+    a:nth-of-type(4){
+        margin-right: 140px;
+    }   
+}
+
+#nav-home-underline, #nav-dest-underline, #nav-crew-underline, #nav-tech-underline{
+    display: none;
+
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+
+    position: absolute;
+    bottom: -1.5px;
+    width: 100%;
+    margin: 0px;
+}
+
+#mobile-menu-icon{
+    display: none;
+    width: 24px;
+    height: 21px;
+}
+
+#mobile-close-menu-icon{
+    display: none;
+
+    width: 24px;
+    height: 24px;
+}
+
+
+
+@media (min-width: 421px) and (max-width: 769px) {
+    nav{
+        margin-top: 0px;
+        height: 88px;
+    }
+    
+    .navbar-left{
+        width: 38.3%;
+
+        > div{
+            display: none !important;
+        }
+    }
+
+    .navbar-right{
+        width: 61.7%;
+        justify-content: space-between;
+
+        >a{
+            font-size: 14px;
+            letter-spacing: 2.36px;
+
+            >span{
+                display: none;
+            }
+        }
+
+        a:nth-of-type(1){
+            margin-left: 47px;
+        }
+
+        a:nth-of-type(4){
+            margin-right: 47px;
+        }   
+    }
+}
+
+@media (max-width: 420px){
+    nav{
+        margin-top: 0px;
+    }
+
+    #nav-home, #nav-destination, #nav-crew, #nav-technology{
+        display: block;
+        
+    }
+
+    .navbar-left{
+        width: 100%;
+
+        > #site-logo{
+            margin-left: 24px;
+            width: 40px;
+            height: 40px;
+        }
+
+        > div{
+            display: none !important;
+        }
+
+        > #mobile-menu-icon{
+            display: block;
+            margin-right: 24px;
+        }
+    }
+
+    .navbar-right{
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: absolute;
+        z-index: 99999;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 0px;
+
+        transition: width 0.5s ease;
+
+        >#mobile-close-menu-icon{
+            display: block;
+            width: 19.09px;
+            height: 19.09px;
+            position: absolute;
+            top: 33.95px;
+            right: 33.95px;
+        }
+
+        >a{
+            height: auto;
+            margin-left: 32px;
+        }
+
+        >a:nth-of-type(1){
+            margin-left: 32px;
+            margin-top: 118px;
+        }
+
+        >a:nth-of-type(2){
+            margin-top: 32px;
+        }
+
+        >a:nth-of-type(3){
+            margin-top: 32px;
+        }
+    
+        >a:nth-of-type(4){
+            margin-top: 32px;
+            margin-right: 0px;
+        } 
+        
+
+    }
+
+    #nav-home-underline, #nav-dest-underline, #nav-crew-underline, #nav-tech-underline{
+        border-bottom-style: none;
+    }
+
+}
